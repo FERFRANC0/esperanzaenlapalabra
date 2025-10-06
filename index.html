@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esperanza en la Palabra - Frases de Fe y Optimismo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+    <style>
+        /* Variables CSS para colores y fuentes */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-secondary: Georgia, 'Times New Roman', Times, serif;
+            --bible-color: #f4e9d8;
+            --bible-border: #8b4513;
+            --bible-text: #5d4037;
+            --highlight-yellow: rgba(255, 255, 0, 0.3);
+            --highlight-blue: rgba(173, 216, 230, 0.4);
+            --highlight-green: rgba(144, 238, 144, 0.4);
+            --highlight-pink: rgba(255, 182, 193, 0.4);
+        }
+        
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--light);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Selector de idioma mejorado */
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .language-dropdown-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .language-dropdown-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .language-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            z-index: 1000;
+            margin-top: 5px;
+        }
+        
+        .language-dropdown-content.show {
+            display: block;
+        }
+        
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: var(--dark);
+        }
+        
+        .language-option:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .language-option.active {
+            background-color: var(--light);
+            font-weight: bold;
+        }
+        
+        .fi {
+            border-radius: 2px;
+        }
+        
+        /* Navegación */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section con Carrusel */
+        .hero {
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .carousel-item.active {
+            opacity: 1;
+        }
+        
+        .carousel-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .carousel-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .carousel-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-secondary);
+        }
+        
+        .carousel-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Frases Section */
+        .frases-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: var(--font-secondary);
+            color: var(--primary);
+        }
+        
+        .frases-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .frase-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .frase-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(52, 152, 219, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .frase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .frase-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .frase-ref {
+            color: var(--secondary);
+            font-weight: 600;
+            text-align: right;
+        }
+        
+        /* Sistema de comentarios y reacciones */
+        .reactions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+            gap: 10px;
+        }
+        
+        .reaction-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .reaction-btn:hover {
+            transform: scale(1.2);
+        }
+        
+        .comments-section {
+            margin-top: 1.5rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+        
+        .comment-form {
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .comment-submit {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .comment {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        /* Biblia Virtual - Diseño Mejorado */
+        .biblia-section {
+            padding: 5rem 0;
+            background-color: #f5f7fa;
+        }
+        
+        .biblia-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--bible-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--bible-border);
+            padding: 2rem;
+            position: relative;
+            font-family: var(--font-secondary);
+            color: var(--bible-text);
+        }
+        
+        .biblia-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(139, 69, 19, 0.1), transparent);
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .biblia-container:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to top, rgba(139, 69, 19, 0.1), transparent);
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .biblia-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--bible-border);
+        }
+        
+        .biblia-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--bible-border);
+            text-align: center;
+            flex: 1;
+        }
+        
+        .biblia-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .biblia-select {
+            flex: 1;
+            min-width: 150px;
+            padding: 10px;
+            border: 1px solid var(--bible-border);
+            border-radius: 5px;
+            background-color: white;
+            font-family: var(--font-primary);
+            color: var(--bible-text);
+        }
+        
+        .biblia-nav {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .biblia-nav-btn {
+            background-color: var(--bible-border);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .biblia-nav-btn:hover {
+            background-color: #6b330a;
+        }
+        
+        .biblia-content {
+            line-height: 1.8;
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 1.5rem;
+            border: 1px solid rgba(139, 69, 19, 0.3);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .biblia-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .biblia-content::-webkit-scrollbar-thumb {
+            background-color: var(--bible-border);
+            border-radius: 4px;
+        }
+        
+        .verse {
+            margin-bottom: 1rem;
+            padding: 5px 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+            position: relative;
+        }
+        
+        .verse:hover {
+            background-color: rgba(139, 69, 19, 0.1);
+        }
+        
+        .verse-number {
+            font-weight: bold;
+            color: var(--bible-border);
+            margin-right: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .verse-text {
+            display: inline;
+        }
+        
+        .highlight-tools {
+            display: flex;
+            gap: 10px;
+            margin-top: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .highlight-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-yellow {
+            background-color: var(--highlight-yellow);
+        }
+        
+        .highlight-blue {
+            background-color: var(--highlight-blue);
+        }
+        
+        .highlight-green {
+            background-color: var(--highlight-green);
+        }
+        
+        .highlight-pink {
+            background-color: var(--highlight-pink);
+        }
+        
+        .highlight-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .clear-highlights {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-secondary);
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Oración Section */
+        .oracion-section {
+            padding: 5rem 0;
+            background-color: #f5f7fa;
+        }
+        
+        .oracion-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .oracion-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .carousel-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .carousel-content p {
+                font-size: 1rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .language-selector {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+            
+            .biblia-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .biblia-controls {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .carousel-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .frases-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="language-selector">
+            <div class="language-dropdown">
+                <button class="language-dropdown-btn">
+                    <span class="fi fi-es" id="current-flag"></span>
+                    <span id="current-language">Español</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-dropdown-content" id="language-dropdown">
+                    <div class="language-option active" data-lang="es">
+                        <span class="fi fi-es"></span>
+                        <span>Español</span>
+                    </div>
+                    <div class="language-option" data-lang="en">
+                        <span class="fi fi-us"></span>
+                        <span>English</span>
+                    </div>
+                    <div class="language-option" data-lang="pt">
+                        <span class="fi fi-br"></span>
+                        <span>Português</span>
+                    </div>
+                    <div class="language-option" data-lang="fr">
+                        <span class="fi fi-fr"></span>
+                        <span>Français</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-cross"></i>
+                <h1 data-translate="site-title">Esperanza en la Palabra</h1>
+            </div>
+            <p class="tagline" data-translate="site-tagline">Encuentra consuelo y fortaleza en las promesas de Dios</p>
+        </div>
+    </header>
+    
+    <!-- Navegación -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#" style="color: var(--dark);" data-translate="site-title">Esperanza en la Palabra</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" data-translate="nav-home">Inicio</a></li>
+                <li><a href="#frases" data-translate="nav-phrases">Frases</a></li>
+                <li><a href="#biblia" data-translate="nav-bible">Biblia Virtual</a></li>
+                <li><a href="#versiculos" data-translate="nav-verses">Versículos</a></li>
+                <li><a href="#oracion" data-translate="nav-prayer">Oración</a></li>
+                <li><a href="#contacto" data-translate="nav-contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section con Carrusel -->
+    <section class="hero" id="inicio">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');">
+                    <div class="carousel-content">
+                        <h1 data-translate="hero-title-1">Dios tiene un propósito para tu vida</h1>
+                        <p data-translate="hero-text-1">En momentos de dificultad, encuentra consuelo en la Palabra de Dios y renueva tu esperanza</p>
+                        <a href="#frases" class="btn" data-translate="hero-button-1">Ver frases de esperanza</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');">
+                    <div class="carousel-content">
+                        <h1 data-translate="hero-title-2">No temas, porque yo estoy contigo</h1>
+                        <p data-translate="hero-text-2">Dios promete estar a nuestro lado en cada situación difícil que enfrentemos</p>
+                        <a href="#frases" class="btn" data-translate="hero-button-2">Encuentra fortaleza</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                    <div class="carousel-content">
+                        <h1 data-translate="hero-title-3">En la tribulación, hay esperanza</h1>
+                        <p data-translate="hero-text-3">Las pruebas de hoy preparan el testimonio de mañana</p>
+                        <a href="#oracion" class="btn" data-translate="hero-button-3">Ora con nosotros</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-controls">
+                <div class="carousel-dot active" data-slide="0"></div>
+                <div class="carousel-dot" data-slide="1"></div>
+                <div class="carousel-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Frases Section -->
+    <section class="frases-section" id="frases">
+        <div class="container">
+            <h2 class="section-title" data-translate="phrases-title">Frases de Fe y Optimismo</h2>
+            <div class="frases-container">
+                <!-- Frase 1 -->
+                <div class="frase-card">
+                    <p class="frase-text" data-translate="phrase-1">No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.</p>
+                    <p class="frase-ref">Isaías 41:10</p>
+                    
+                    <div class="reactions">
+                        <button class="reaction-btn" data-reaction="like">👍 <span>0</span></button>
+                        <button class="reaction-btn" data-reaction="love">❤️ <span>0</span></button>
+                        <button class="reaction-btn" data-reaction="pray">🙏 <span>0</span></button>
+                    </div>
+                    
+                    <div class="comments-section">
+                        <div class="comment-form">
+                            <textarea class="comment-input" placeholder="Añade un comentario..."></textarea>
+                            <button class="comment-submit">Comentar</button>
+                        </div>
+                        <div class="comments-list">
+                            <!-- Los comentarios se añadirán aquí dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frase 2 -->
+                <div class="frase-card">
+                    <p class="frase-text" data-translate="phrase-2">Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.</p>
+                    <p class="frase-ref">1 Pedro 5:7</p>
+                    
+                    <div class="reactions">
+                        <button class="reaction-btn" data-reaction="like">👍 <span>0</span></button>
+                        <button class="reaction-btn" data-reaction="love">❤️ <span>0</span></button>
+                        <button class="reaction-btn" data-reaction="pray">🙏 <span>0</span></button>
+                    </div>
+                    
+                    <div class="comments-section">
+                        <div class="comment-form">
+                            <textarea class="comment-input" placeholder="Añade un comentario..."></textarea>
+                            <button class="comment-submit">Comentar</button>
+                        </div>
+                        <div class="comments-list">
+                            <!-- Los comentarios se añadirán aquí dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frase 3 -->
+                <div class="frase-card">
+                    <p class="frase-text" data-translate="phrase-3">Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados.</p>
+                    <p class="frase-ref">Romanos 8:28</p>
+                    
+                    <div class="reactions">
+                        <button class="reaction-btn" data-reaction="like">👍 <span>0</span></button>
+                        <button class="reaction-btn" data-reaction="love">❤️ <span>0</span></button>
+                        <button class="reaction-btn" data-reaction="pray">🙏 <span>0</span></button>
+                    </div>
+                    
+                    <div class="comments-section">
+                        <div class="comment-form">
+                            <textarea class="comment-input" placeholder="Añade un comentario..."></textarea>
+                            <button class="comment-submit">Comentar</button>
+                        </div>
+                        <div class="comments-list">
+                            <!-- Los comentarios se añadirán aquí dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Biblia Virtual -->
+    <section class="biblia-section" id="biblia">
+        <div class="container">
+            <h2 class="section-title" data-translate="bible-title">Biblia Virtual</h2>
+            <div class="biblia-container">
+                <div class="biblia-header">
+                    <div class="biblia-title" id="bible-display-title">Génesis 1</div>
+                </div>
+                
+                <div class="biblia-controls">
+                    <select class="biblia-select" id="testament-select">
+                        <option value="old" data-translate="testament-old">Antiguo Testamento</option>
+                        <option value="new" data-translate="testament-new">Nuevo Testamento</option>
+                    </select>
+                    
+                    <select class="biblia-select" id="book-select">
+                        <!-- Los libros se cargarán dinámicamente -->
+                    </select>
+                    
+                    <select class="biblia-select" id="chapter-select">
+                        <!-- Los capítulos se cargarán dinámicamente -->
+                    </select>
+                    
+                    <div class="biblia-nav">
+                        <button class="biblia-nav-btn" id="prev-chapter">←</button>
+                        <button class="biblia-nav-btn" id="next-chapter">→</button>
+                    </div>
+                </div>
+                
+                <div class="biblia-content" id="bible-content">
+                    <!-- El contenido bíblico se cargará aquí -->
+                </div>
+                
+                <div class="highlight-tools">
+                    <p data-translate="highlight-text">Resaltar versículos:</p>
+                    <button class="highlight-btn highlight-yellow" data-color="yellow">Amarillo</button>
+                    <button class="highlight-btn highlight-blue" data-color="blue">Azul</button>
+                    <button class="highlight-btn highlight-green" data-color="green">Verde</button>
+                    <button class="highlight-btn highlight-pink" data-color="pink">Rosa</button>
+                    <button class="highlight-btn clear-highlights" id="clear-highlights">Limpiar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section" id="versiculos">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title" data-translate="cta-title">La Palabra de Dios es viva y eficaz</h2>
+                <p class="cta-text" data-translate="cta-text">En momentos de dificultad, acércate a Dios en oración y encuentra consuelo en sus promesas. Él nunca te abandonará y tiene un plan perfecto para tu vida.</p>
+                <a href="#oracion" class="btn" data-translate="cta-button">Oración de consuelo</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Oración Section -->
+    <section class="oracion-section" id="oracion">
+        <div class="container">
+            <h2 class="section-title" data-translate="prayer-title">Oración de Consuelo</h2>
+            <div class="oracion-content">
+                <div class="oracion-text">
+                    <p data-translate="prayer-text-1">Padre celestial, en este momento de dificultad y dolor, acudo a ti buscando consuelo y fortaleza.</p>
+                    <p data-translate="prayer-text-2">Señor, tú conoces cada una de mis luchas y cargas. Te pido que me des la paz que sobrepasa todo entendimiento, que guarde mi corazón y mi mente en Cristo Jesús.</p>
+                    <p data-translate="prayer-text-3">Renueva mis fuerzas, oh Dios, y ayúdame a confiar en tu perfecto plan para mi vida. Recuérdame que todas las cosas cooperan para bien de los que te aman.</p>
+                    <p data-translate="prayer-text-4">En el nombre de Jesús, amén.</p>
+                </div>
+                <p data-translate="prayer-note">Puedes personalizar esta oración según tus necesidades. Dios siempre escucha las oraciones de sus hijos.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="site-title">Esperanza en la Palabra</h3>
+                    <p data-translate="footer-about">Un espacio para encontrar consuelo, fortaleza y esperanza en la Palabra de Dios durante los momentos difíciles de la vida.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer-links">Enlaces útiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio" data-translate="nav-home">Inicio</a></li>
+                        <li><a href="#frases" data-translate="nav-phrases">Frases de esperanza</a></li>
+                        <li><a href="#biblia" data-translate="nav-bible">Biblia Virtual</a></li>
+                        <li><a href="#oracion" data-translate="nav-prayer">Oración</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer-contact">Contacto</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@esperanzaenlapalabra.com">info@esperanzaenlapalabra.com</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Esperanza en la Palabra. <span data-translate="footer-rights">Todos los derechos reservados.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sistema de traducción completo
+        const translations = {
+            es: {
+                "site-title": "Esperanza en la Palabra",
+                "site-tagline": "Encuentra consuelo y fortaleza en las promesas de Dios",
+                "nav-home": "Inicio",
+                "nav-phrases": "Frases",
+                "nav-bible": "Biblia Virtual",
+                "nav-verses": "Versículos",
+                "nav-prayer": "Oración",
+                "nav-contact": "Contacto",
+                "hero-title-1": "Dios tiene un propósito para tu vida",
+                "hero-text-1": "En momentos de dificultad, encuentra consuelo en la Palabra de Dios y renueva tu esperanza",
+                "hero-button-1": "Ver frases de esperanza",
+                "hero-title-2": "No temas, porque yo estoy contigo",
+                "hero-text-2": "Dios promete estar a nuestro lado en cada situación difícil que enfrentemos",
+                "hero-button-2": "Encuentra fortaleza",
+                "hero-title-3": "En la tribulación, hay esperanza",
+                "hero-text-3": "Las pruebas de hoy preparan el testimonio de mañana",
+                "hero-button-3": "Ora con nosotros",
+                "phrases-title": "Frases de Fe y Optimismo",
+                "phrase-1": "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.",
+                "phrase-2": "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
+                "phrase-3": "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados.",
+                "bible-title": "Biblia Virtual",
+                "testament-old": "Antiguo Testamento",
+                "testament-new": "Nuevo Testamento",
+                "highlight-text": "Resaltar versículos:",
+                "cta-title": "La Palabra de Dios es viva y eficaz",
+                "cta-text": "En momentos de dificultad, acércate a Dios en oración y encuentra consuelo en sus promesas. Él nunca te abandonará y tiene un plan perfecto para tu vida.",
+                "cta-button": "Oración de consuelo",
+                "prayer-title": "Oración de Consuelo",
+                "prayer-text-1": "Padre celestial, en este momento de dificultad y dolor, acudo a ti buscando consuelo y fortaleza.",
+                "prayer-text-2": "Señor, tú conoces cada una de mis luchas y cargas. Te pido que me des la paz que sobrepasa todo entendimiento, que guarde mi corazón y mi mente en Cristo Jesús.",
+                "prayer-text-3": "Renueva mis fuerzas, oh Dios, y ayúdame a confiar en tu perfecto plan para mi vida. Recuérdame que todas las cosas cooperan para bien de los que te aman.",
+                "prayer-text-4": "En el nombre de Jesús, amén.",
+                "prayer-note": "Puedes personalizar esta oración según tus necesidades. Dios siempre escucha las oraciones de sus hijos.",
+                "footer-about": "Un espacio para encontrar consuelo, fortaleza y esperanza en la Palabra de Dios durante los momentos difíciles de la vida.",
+                "footer-links": "Enlaces útiles",
+                "footer-contact": "Contacto",
+                "footer-rights": "Todos los derechos reservados."
+            },
+            en: {
+                "site-title": "Hope in the Word",
+                "site-tagline": "Find comfort and strength in God's promises",
+                "nav-home": "Home",
+                "nav-phrases": "Phrases",
+                "nav-bible": "Virtual Bible",
+                "nav-verses": "Verses",
+                "nav-prayer": "Prayer",
+                "nav-contact": "Contact",
+                "hero-title-1": "God has a purpose for your life",
+                "hero-text-1": "In difficult times, find comfort in God's Word and renew your hope",
+                "hero-button-1": "See hope phrases",
+                "hero-title-2": "Do not fear, for I am with you",
+                "hero-text-2": "God promises to be by our side in every difficult situation we face",
+                "hero-button-2": "Find strength",
+                "hero-title-3": "In tribulation, there is hope",
+                "hero-text-3": "Today's trials prepare tomorrow's testimony",
+                "hero-button-3": "Pray with us",
+                "phrases-title": "Faith and Optimism Phrases",
+                "phrase-1": "Do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+                "phrase-2": "Cast all your anxiety on him because he cares for you.",
+                "phrase-3": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+                "bible-title": "Virtual Bible",
+                "testament-old": "Old Testament",
+                "testament-new": "New Testament",
+                "highlight-text": "Highlight verses:",
+                "cta-title": "God's Word is living and effective",
+                "cta-text": "In difficult times, approach God in prayer and find comfort in His promises. He will never abandon you and has a perfect plan for your life.",
+                "cta-button": "Prayer of comfort",
+                "prayer-title": "Prayer of Comfort",
+                "prayer-text-1": "Heavenly Father, in this moment of difficulty and pain, I come to you seeking comfort and strength.",
+                "prayer-text-2": "Lord, you know each of my struggles and burdens. I ask you to give me the peace that surpasses all understanding, that guards my heart and my mind in Christ Jesus.",
+                "prayer-text-3": "Renew my strength, oh God, and help me to trust in your perfect plan for my life. Remind me that all things work together for good for those who love you.",
+                "prayer-text-4": "In Jesus' name, amen.",
+                "prayer-note": "You can personalize this prayer according to your needs. God always listens to the prayers of His children.",
+                "footer-about": "A space to find comfort, strength and hope in God's Word during life's difficult moments.",
+                "footer-links": "Useful Links",
+                "footer-contact": "Contact",
+                "footer-rights": "All rights reserved."
+            },
+            pt: {
+                "site-title": "Esperança na Palavra",
+                "site-tagline": "Encontre consolo e força nas promessas de Deus",
+                "nav-home": "Início",
+                "nav-phrases": "Frases",
+                "nav-bible": "Bíblia Virtual",
+                "nav-verses": "Versículos",
+                "nav-prayer": "Oração",
+                "nav-contact": "Contato",
+                "hero-title-1": "Deus tem um propósito para sua vida",
+                "hero-text-1": "Em momentos difíceis, encontre consolo na Palavra de Deus e renove sua esperança",
+                "hero-button-1": "Ver frases de esperança",
+                "hero-title-2": "Não temas, porque eu estou contigo",
+                "hero-text-2": "Deus promete estar ao nosso lado em cada situação difícil que enfrentamos",
+                "hero-button-2": "Encontre força",
+                "hero-title-3": "Na tribulação, há esperança",
+                "hero-text-3": "As provas de hoje preparam o testemunho de amanhã",
+                "hero-button-3": "Ore conosco",
+                "phrases-title": "Frases de Fé e Otimismo",
+                "phrase-1": "Não temas, porque eu sou contigo; não te assombres, porque eu sou teu Deus; eu te fortaleço, e te ajudo, e te sustento com a destra da minha justiça.",
+                "phrase-2": "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós.",
+                "phrase-3": "E sabemos que todas as coisas contribuem juntamente para o bem daqueles que amam a Deus, daqueles que são chamados segundo o seu propósito.",
+                "bible-title": "Bíblia Virtual",
+                "testament-old": "Antigo Testamento",
+                "testament-new": "Novo Testamento",
+                "highlight-text": "Destacar versículos:",
+                "cta-title": "A Palavra de Deus é viva e eficaz",
+                "cta-text": "Em momentos difíceis, aproxime-se de Deus em oração e encontre consolo em Suas promessas. Ele nunca o abandonará e tem um plano perfeito para sua vida.",
+                "cta-button": "Oração de consolo",
+                "prayer-title": "Oração de Consolo",
+                "prayer-text-1": "Pai celestial, neste momento de dificuldade e dor, recorro a Ti buscando consolo e fortaleza.",
+                "prayer-text-2": "Senhor, Tu conheces cada uma das minhas lutas e cargas. Peço-Te que me dês a paz que excede todo o entendimento, que guarde o meu coração e a minha mente em Cristo Jesus.",
+                "prayer-text-3": "Renova as minhas forças, ó Deus, e ajuda-me a confiar no Teu plano perfeito para a minha vida. Lembra-me que todas as coisas cooperam para o bem daqueles que Te amam.",
+                "prayer-text-4": "Em nome de Jesus, amém.",
+                "prayer-note": "Pode personalizar esta oração de acordo com as suas necessidades. Deus sempre ouve as orações dos Seus filhos.",
+                "footer-about": "Um espaço para encontrar consolo, força e esperança na Palavra de Deus durante os momentos difíceis da vida.",
+                "footer-links": "Links Úteis",
+                "footer-contact": "Contato",
+                "footer-rights": "Todos os direitos reservados."
+            },
+            fr: {
+                "site-title": "Espérance dans la Parole",
+                "site-tagline": "Trouvez du réconfort et de la force dans les promesses de Dieu",
+                "nav-home": "Accueil",
+                "nav-phrases": "Phrases",
+                "nav-bible": "Bible Virtuelle",
+                "nav-verses": "Versets",
+                "nav-prayer": "Prière",
+                "nav-contact": "Contact",
+                "hero-title-1": "Dieu a un but pour votre vie",
+                "hero-text-1": "Dans les moments difficiles, trouvez du réconfort dans la Parole de Dieu et renouvelez votre espérance",
+                "hero-button-1": "Voir les phrases d'espoir",
+                "hero-title-2": "Ne crains pas, car je suis avec toi",
+                "hero-text-2": "Dieu promet d'être à nos côtés dans chaque situation difficile que nous affrontons",
+                "hero-button-2": "Trouver de la force",
+                "hero-title-3": "Dans la tribulation, il y a de l'espérance",
+                "hero-text-3": "Les épreuves d'aujourd'hui préparent le témoignage de demain",
+                "hero-button-3": "Priez avec nous",
+                "phrases-title": "Phrases de Foi et d'Optimisme",
+                "phrase-1": "Ne crains rien, car je suis avec toi; Ne promène pas des regards inquiets, car je suis ton Dieu; Je te fortifie, je viens à ton secours, Je te soutiens de ma droite triomphante.",
+                "phrase-2": "Déchargez-vous sur lui de tous vos soucis, car lui-même prend soin de vous.",
+                "phrase-3": "Nous savons, du reste, que toutes choses concourent au bien de ceux qui aiment Dieu, de ceux qui sont appelés selon son dessein.",
+                "bible-title": "Bible Virtuelle",
+                "testament-old": "Ancien Testament",
+                "testament-new": "Nouveau Testament",
+                "highlight-text": "Surligner les versets:",
+                "cta-title": "La Parole de Dieu est vivante et efficace",
+                "cta-text": "Dans les moments difficiles, approchez-vous de Dieu dans la prière et trouvez du réconfort dans Ses promesses. Il ne vous abandonnera jamais et a un plan parfait pour votre vie.",
+                "cta-button": "Prière de réconfort",
+                "prayer-title": "Prière de Réconfort",
+                "prayer-text-1": "Père céleste, en ce moment de difficulté et de douleur, je viens à Toi cherchant du réconfort et de la force.",
+                "prayer-text-2": "Seigneur, Tu connais chacun de mes combats et fardeaux. Je Te demande de me donner la paix qui surpasse toute intelligence, qui garde mon cœur et mon esprit en Jésus-Christ.",
+                "prayer-text-3": "Renouvelle mes forces, ô Dieu, et aide-moi à faire confiance à Ton plan parfait pour ma vie. Rappelle-moi que toutes choses concourent au bien de ceux qui T'aiment.",
+                "prayer-text-4": "Au nom de Jésus, amen.",
+                "prayer-note": "Vous pouvez personnaliser cette prière selon vos besoins. Dieu écoute toujours les prières de Ses enfants.",
+                "footer-about": "Un espace pour trouver du réconfort, de la force et de l'espérance dans la Parole de Dieu pendant les moments difficiles de la vie.",
+                "footer-links": "Liens Utiles",
+                "footer-contact": "Contact",
+                "footer-rights": "Tous droits réservés."
+            }
+        };
+
+        // Datos completos de la Biblia Reina Valera 1960
+        const bibleData = {
+            old: [
+                { name: "Génesis", chapters: 50, abbrev: "Gn" },
+                { name: "Éxodo", chapters: 40, abbrev: "Ex" },
+                { name: "Levítico", chapters: 27, abbrev: "Lv" },
+                { name: "Números", chapters: 36, abbrev: "Nm" },
+                { name: "Deuteronomio", chapters: 34, abbrev: "Dt" },
+                { name: "Josué", chapters: 24, abbrev: "Jos" },
+                { name: "Jueces", chapters: 21, abbrev: "Jue" },
+                { name: "Rut", chapters: 4, abbrev: "Rt" },
+                { name: "1 Samuel", chapters: 31, abbrev: "1 Sam" },
+                { name: "2 Samuel", chapters: 24, abbrev: "2 Sam" },
+                { name: "1 Reyes", chapters: 22, abbrev: "1 Re" },
+                { name: "2 Reyes", chapters: 25, abbrev: "2 Re" },
+                { name: "1 Crónicas", chapters: 29, abbrev: "1 Cr" },
+                { name: "2 Crónicas", chapters: 36, abbrev: "2 Cr" },
+                { name: "Esdras", chapters: 10, abbrev: "Esd" },
+                { name: "Nehemías", chapters: 13, abbrev: "Neh" },
+                { name: "Ester", chapters: 10, abbrev: "Est" },
+                { name: "Job", chapters: 42, abbrev: "Job" },
+                { name: "Salmos", chapters: 150, abbrev: "Sal" },
+                { name: "Proverbios", chapters: 31, abbrev: "Pr" },
+                { name: "Eclesiastés", chapters: 12, abbrev: "Ec" },
+                { name: "Cantares", chapters: 8, abbrev: "Cnt" },
+                { name: "Isaías", chapters: 66, abbrev: "Is" },
+                { name: "Jeremías", chapters: 52, abbrev: "Jer" },
+                { name: "Lamentaciones", chapters: 5, abbrev: "Lam" },
+                { name: "Ezequiel", chapters: 48, abbrev: "Ez" },
+                { name: "Daniel", chapters: 12, abbrev: "Dn" },
+                { name: "Oseas", chapters: 14, abbrev: "Os" },
+                { name: "Joel", chapters: 3, abbrev: "Jl" },
+                { name: "Amós", chapters: 9, abbrev: "Am" },
+                { name: "Abdías", chapters: 1, abbrev: "Abd" },
+                { name: "Jonás", chapters: 4, abbrev: "Jon" },
+                { name: "Miqueas", chapters: 7, abbrev: "Mi" },
+                { name: "Nahúm", chapters: 3, abbrev: "Na" },
+                { name: "Habacuc", chapters: 3, abbrev: "Hab" },
+                { name: "Sofonías", chapters: 3, abbrev: "Sof" },
+                { name: "Hageo", chapters: 2, abbrev: "Hag" },
+                { name: "Zacarías", chapters: 14, abbrev: "Zac" },
+                { name: "Malaquías", chapters: 4, abbrev: "Mal" }
+            ],
+            new: [
+                { name: "Mateo", chapters: 28, abbrev: "Mt" },
+                { name: "Marcos", chapters: 16, abbrev: "Mc" },
+                { name: "Lucas", chapters: 24, abbrev: "Lc" },
+                { name: "Juan", chapters: 21, abbrev: "Jn" },
+                { name: "Hechos", chapters: 28, abbrev: "Hch" },
+                { name: "Romanos", chapters: 16, abbrev: "Ro" },
+                { name: "1 Corintios", chapters: 16, abbrev: "1 Co" },
+                { name: "2 Corintios", chapters: 13, abbrev: "2 Co" },
+                { name: "Gálatas", chapters: 6, abbrev: "Gá" },
+                { name: "Efesios", chapters: 6, abbrev: "Ef" },
+                { name: "Filipenses", chapters: 4, abbrev: "Fil" },
+                { name: "Colosenses", chapters: 4, abbrev: "Col" },
+                { name: "1 Tesalonicenses", chapters: 5, abbrev: "1 Ts" },
+                { name: "2 Tesalonicenses", chapters: 3, abbrev: "2 Ts" },
+                { name: "1 Timoteo", chapters: 6, abbrev: "1 Ti" },
+                { name: "2 Timoteo", chapters: 4, abbrev: "2 Ti" },
+                { name: "Tito", chapters: 3, abbrev: "Tit" },
+                { name: "Filemón", chapters: 1, abbrev: "Flm" },
+                { name: "Hebreos", chapters: 13, abbrev: "He" },
+                { name: "Santiago", chapters: 5, abbrev: "Stg" },
+                { name: "1 Pedro", chapters: 5, abbrev: "1 P" },
+                { name: "2 Pedro", chapters: 3, abbrev: "2 P" },
+                { name: "1 Juan", chapters: 5, abbrev: "1 Jn" },
+                { name: "2 Juan", chapters: 1, abbrev: "2 Jn" },
+                { name: "3 Juan", chapters: 1, abbrev: "3 Jn" },
+                { name: "Judas", chapters: 1, abbrev: "Jud" },
+                { name: "Apocalipsis", chapters: 22, abbrev: "Ap" }
+            ]
+        };
+
+        // Contenido bíblico de ejemplo (en una implementación real, esto vendría de una API)
+        const bibleContent = {
+            "Génesis": {
+                1: `1 En el principio creó Dios los cielos y la tierra.
+2 Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas.
+3 Y dijo Dios: Sea la luz; y fue la luz.
+4 Y vio Dios que la luz era buena; y separó Dios la luz de las tinieblas.
+5 Y llamó Dios a la luz Día, y a las tinieblas llamó Noche. Y fue la tarde y la mañana un día.`,
+                2: `1 Fueron, pues, acabados los cielos y la tierra, y todo el ejército de ellos.
+2 Y acabó Dios en el día séptimo la obra que hizo; y reposó el día séptimo de toda la obra que hizo.
+3 Y bendijo Dios al día séptimo, y lo santificó, porque en él reposó de toda la obra que había hecho en la creación.`
+            },
+            "Salmos": {
+                1: `1 Bienaventurado el varón que no anduvo en consejo de malos, Ni estuvo en camino de pecadores, Ni en silla de escarnecedores se ha sentado;
+2 Sino que en la ley de Jehová está su delicia, Y en su ley medita de día y de noche.
+3 Será como árbol plantado junto a corrientes de aguas, Que da su fruto en su tiempo, Y su hoja no cae; Y todo lo que hace, prosperará.
+4 No así los malos, Que son como el tamo que arrebata el viento.
+5 Por tanto, no se levantarán los malos en el juicio, Ni los pecadores en la congregación de los justos.
+6 Porque Jehová conoce el camino de los justos; Mas la senda de los malos perecerá.`,
+                23: `1 Jehová es mi pastor; nada me faltará.
+2 En lugares de delicados pastos me hará descansar; Junto a aguas de reposo me pastoreará.
+3 Confortará mi alma; Me guiará por sendas de justicia por amor de su nombre.
+4 Aunque ande en valle de sombra de muerte, No temeré mal alguno, porque tú estarás conmigo; Tu vara y tu cayado me infundirán aliento.
+5 Aderezas mesa delante de mí en presencia de mis angustiadores; Unges mi cabeza con aceite; mi copa está rebosando.
+6 Ciertamente el bien y la misericordia me seguirán todos los días de mi vida, Y en la casa de Jehová moraré por largos días.`
+            },
+            "Juan": {
+                1: `1 En el principio era el Verbo, y el Verbo era con Dios, y el Verbo era Dios.
+2 Este era en el principio con Dios.
+3 Todas las cosas por él fueron hechas, y sin él nada de lo que ha sido hecho, fue hecho.
+4 En él estaba la vida, y la vida era la luz de los hombres.
+5 La luz en las tinieblas resplandece, y las tinieblas no prevalecieron contra ella.`,
+                3: `1 Había un hombre de los fariseos que se llamaba Nicodemo, un principal entre los judíos.
+2 Este vino a Jesús de noche, y le dijo: Rabí, sabemos que has venido de Dios como maestro; porque nadie puede hacer estas señales que tú haces, si no está Dios con él.
+3 Respondió Jesús y le dijo: De cierto, de cierto te digo, que el que no naciere de nuevo, no puede ver el reino de Dios.`
+            }
+        };
+
+        // Carrusel de imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            let currentSlide = 0;
+            const slideInterval = 5000; // Cambiar cada 5 segundos
+            
+            // Función para mostrar slide específico
+            function showSlide(index) {
+                // Ocultar todos los slides
+                carouselItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Desactivar todos los dots
+                carouselDots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Mostrar slide seleccionado
+                carouselItems[index].classList.add('active');
+                carouselDots[index].classList.add('active');
+                
+                currentSlide = index;
+            }
+            
+            // Configurar eventos para los dots
+            carouselDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    resetInterval();
+                });
+            });
+            
+            // Función para siguiente slide
+            function nextSlide() {
+                let nextIndex = (currentSlide + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            }
+            
+            // Iniciar intervalo automático
+            let slideTimer = setInterval(nextSlide, slideInterval);
+            
+            // Reiniciar intervalo al interactuar manualmente
+            function resetInterval() {
+                clearInterval(slideTimer);
+                slideTimer = setInterval(nextSlide, slideInterval);
+            }
+            
+            // Efecto de desplazamiento suave para los enlaces de navegación
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Animación para las tarjetas de frases al hacer scroll
+            const fraseCards = document.querySelectorAll('.frase-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Aplicar estilos iniciales y observar
+            fraseCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Sistema de traducción mejorado
+            const languageDropdown = document.getElementById('language-dropdown');
+            const languageDropdownBtn = document.querySelector('.language-dropdown-btn');
+            const currentLanguage = document.getElementById('current-language');
+            const currentFlag = document.getElementById('current-flag');
+            const languageOptions = document.querySelectorAll('.language-option');
+            
+            let currentLang = 'es';
+            
+            // Mostrar/ocultar dropdown
+            languageDropdownBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                languageDropdown.classList.toggle('show');
+            });
+            
+            // Cerrar dropdown al hacer clic fuera
+            document.addEventListener('click', function() {
+                languageDropdown.classList.remove('show');
+            });
+            
+            // Cambiar idioma
+            languageOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+                    
+                    // Actualizar opciones activas
+                    languageOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Actualizar botón principal
+                    const flagClass = this.querySelector('.fi').className;
+                    const languageName = this.querySelector('span:last-child').textContent;
+                    
+                    currentFlag.className = flagClass;
+                    currentLanguage.textContent = languageName;
+                    
+                    // Cerrar dropdown
+                    languageDropdown.classList.remove('show');
+                });
+            });
+            
+            function changeLanguage(lang) {
+                currentLang = lang;
+                const elements = document.querySelectorAll('[data-translate]');
+                
+                elements.forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.textContent = translations[lang][key];
+                    }
+                });
+            }
+            
+            // Sistema de reacciones
+            const reactionButtons = document.querySelectorAll('.reaction-btn');
+            
+            reactionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const reaction = this.getAttribute('data-reaction');
+                    const countElement = this.querySelector('span');
+                    let count = parseInt(countElement.textContent);
+                    countElement.textContent = count + 1;
+                    
+                    // Guardar en localStorage
+                    const card = this.closest('.frase-card');
+                    const cardId = Array.from(document.querySelectorAll('.frase-card')).indexOf(card);
+                    saveReaction(cardId, reaction);
+                });
+            });
+            
+            function saveReaction(cardId, reaction) {
+                let reactions = JSON.parse(localStorage.getItem('verseReactions')) || {};
+                if (!reactions[cardId]) {
+                    reactions[cardId] = {};
+                }
+                reactions[cardId][reaction] = (reactions[cardId][reaction] || 0) + 1;
+                localStorage.setItem('verseReactions', JSON.stringify(reactions));
+            }
+            
+            function loadReactions() {
+                const reactions = JSON.parse(localStorage.getItem('verseReactions')) || {};
+                const cards = document.querySelectorAll('.frase-card');
+                
+                cards.forEach((card, index) => {
+                    if (reactions[index]) {
+                        const reactionBtns = card.querySelectorAll('.reaction-btn');
+                        reactionBtns.forEach(btn => {
+                            const reaction = btn.getAttribute('data-reaction');
+                            if (reactions[index][reaction]) {
+                                btn.querySelector('span').textContent = reactions[index][reaction];
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Sistema de comentarios
+            const commentForms = document.querySelectorAll('.comment-form');
+            
+            commentForms.forEach(form => {
+                const submitBtn = form.querySelector('.comment-submit');
+                const textarea = form.querySelector('.comment-input');
+                const commentsList = form.nextElementSibling;
+                
+                submitBtn.addEventListener('click', function() {
+                    const commentText = textarea.value.trim();
+                    if (commentText) {
+                        addComment(commentsList, commentText);
+                        textarea.value = '';
+                        
+                        // Guardar en localStorage
+                        const card = form.closest('.frase-card');
+                        const cardId = Array.from(document.querySelectorAll('.frase-card')).indexOf(card);
+                        saveComment(cardId, commentText);
+                    }
+                });
+            });
+            
+            function addComment(commentsList, text) {
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment';
+                
+                const authorDiv = document.createElement('div');
+                authorDiv.className = 'comment-author';
+                authorDiv.textContent = 'Usuario';
+                
+                const textDiv = document.createElement('div');
+                textDiv.textContent = text;
+                
+                commentDiv.appendChild(authorDiv);
+                commentDiv.appendChild(textDiv);
+                commentsList.appendChild(commentDiv);
+            }
+            
+            function saveComment(cardId, comment) {
+                let comments = JSON.parse(localStorage.getItem('verseComments')) || {};
+                if (!comments[cardId]) {
+                    comments[cardId] = [];
+                }
+                comments[cardId].push({
+                    author: 'Usuario',
+                    text: comment,
+                    date: new Date().toISOString()
+                });
+                localStorage.setItem('verseComments', JSON.stringify(comments));
+            }
+            
+            function loadComments() {
+                const comments = JSON.parse(localStorage.getItem('verseComments')) || {};
+                const cards = document.querySelectorAll('.frase-card');
+                
+                cards.forEach((card, index) => {
+                    if (comments[index]) {
+                        const commentsList = card.querySelector('.comments-list');
+                        comments[index].forEach(comment => {
+                            addComment(commentsList, comment.text);
+                        });
+                    }
+                });
+            }
+            
+            // Biblia Virtual - Implementación completa
+            const testamentSelect = document.getElementById('testament-select');
+            const bookSelect = document.getElementById('book-select');
+            const chapterSelect = document.getElementById('chapter-select');
+            const prevChapterBtn = document.getElementById('prev-chapter');
+            const nextChapterBtn = document.getElementById('next-chapter');
+            const bibleContentDiv = document.getElementById('bible-content');
+            const bibleTitle = document.getElementById('bible-display-title');
+            const highlightButtons = document.querySelectorAll('.highlight-btn[data-color]');
+            const clearHighlightsBtn = document.getElementById('clear-highlights');
+            
+            let currentTestament = 'old';
+            let currentBook = 'Génesis';
+            let currentChapter = 1;
+            let currentHighlightColor = null;
+            
+            // Cargar libros según el testamento seleccionado
+            function loadBooks() {
+                bookSelect.innerHTML = '';
+                const books = bibleData[currentTestament];
+                
+                books.forEach(book => {
+                    const option = document.createElement('option');
+                    option.value = book.name;
+                    option.textContent = book.name;
+                    bookSelect.appendChild(option);
+                });
+                
+                // Establecer el libro actual
+                bookSelect.value = currentBook;
+                loadChapters();
+            }
+            
+            // Cargar capítulos según el libro seleccionado
+            function loadChapters() {
+                chapterSelect.innerHTML = '';
+                const books = bibleData[currentTestament];
+                const book = books.find(b => b.name === currentBook);
+                
+                if (book) {
+                    for (let i = 1; i <= book.chapters; i++) {
+                        const option = document.createElement('option');
+                        option.value = i;
+                        option.textContent = i;
+                        chapterSelect.appendChild(option);
+                    }
+                    
+                    // Establecer el capítulo actual
+                    chapterSelect.value = currentChapter;
+                    loadBibleContent();
+                }
+            }
+            
+            // Cargar contenido bíblico
+            function loadBibleContent() {
+                if (bibleContent[currentBook] && bibleContent[currentBook][currentChapter]) {
+                    let content = '';
+                    const verses = bibleContent[currentBook][currentChapter].split('\n');
+                    
+                    verses.forEach(verse => {
+                        if (verse.trim()) {
+                            const verseNumber = verse.match(/^(\d+)/);
+                            if (verseNumber) {
+                                const verseNum = verseNumber[1];
+                                const verseText = verse.substring(verseNumber[1].length).trim();
+                                
+                                // Verificar si el versículo tiene resaltado guardado
+                                const verseId = `${currentBook}-${currentChapter}-${verseNum}`;
+                                const savedHighlight = getSavedHighlight(verseId);
+                                
+                                content += `
+                                    <div class="verse" data-verse-id="${verseId}" ${savedHighlight ? `style="background-color: ${savedHighlight}"` : ''}>
+                                        <span class="verse-number">${verseNum}</span>
+                                        <span class="verse-text">${verseText}</span>
+                                    </div>
+                                `;
+                            } else {
+                                content += `<div class="verse">${verse}</div>`;
+                            }
+                        }
+                    });
+                    
+                    bibleContentDiv.innerHTML = content;
+                    bibleTitle.textContent = `${currentBook} ${currentChapter}`;
+                    
+                    // Añadir event listeners para resaltar versículos
+                    addVerseHighlightListeners();
+                } else {
+                    bibleContentDiv.innerHTML = '<p>Contenido no disponible para esta selección.</p>';
+                }
+            }
+            
+            // Añadir event listeners para resaltar versículos
+            function addVerseHighlightListeners() {
+                const verses = bibleContentDiv.querySelectorAll('.verse');
+                
+                verses.forEach(verse => {
+                    verse.addEventListener('click', function() {
+                        if (currentHighlightColor) {
+                            const verseId = this.getAttribute('data-verse-id');
+                            this.style.backgroundColor = currentHighlightColor;
+                            saveHighlight(verseId, currentHighlightColor);
+                        }
+                    });
+                });
+            }
+            
+            // Guardar resaltado en localStorage
+            function saveHighlight(verseId, color) {
+                let highlights = JSON.parse(localStorage.getItem('bibleHighlights')) || {};
+                highlights[verseId] = color;
+                localStorage.setItem('bibleHighlights', JSON.stringify(highlights));
+            }
+            
+            // Obtener resaltado guardado
+            function getSavedHighlight(verseId) {
+                const highlights = JSON.parse(localStorage.getItem('bibleHighlights')) || {};
+                return highlights[verseId] || null;
+            }
+            
+            // Limpiar todos los resaltados
+            function clearHighlights() {
+                localStorage.removeItem('bibleHighlights');
+                const verses = bibleContentDiv.querySelectorAll('.verse');
+                verses.forEach(verse => {
+                    verse.style.backgroundColor = '';
+                });
+            }
+            
+            // Event listeners para los controles de la biblia
+            testamentSelect.addEventListener('change', function() {
+                currentTestament = this.value;
+                currentBook = bibleData[currentTestament][0].name;
+                currentChapter = 1;
+                loadBooks();
+            });
+            
+            bookSelect.addEventListener('change', function() {
+                currentBook = this.value;
+                currentChapter = 1;
+                loadChapters();
+            });
+            
+            chapterSelect.addEventListener('change', function() {
+                currentChapter = parseInt(this.value);
+                loadBibleContent();
+            });
+            
+            prevChapterBtn.addEventListener('click', function() {
+                if (currentChapter > 1) {
+                    currentChapter--;
+                    chapterSelect.value = currentChapter;
+                    loadBibleContent();
+                }
+            });
+            
+            nextChapterBtn.addEventListener('click', function() {
+                const books = bibleData[currentTestament];
+                const book = books.find(b => b.name === currentBook);
+                
+                if (currentChapter < book.chapters) {
+                    currentChapter++;
+                    chapterSelect.value = currentChapter;
+                    loadBibleContent();
+                }
+            });
+            
+            // Event listeners para los botones de resaltado
+            highlightButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const color = this.getAttribute('data-color');
+                    
+                    // Remover selección anterior
+                    highlightButtons.forEach(btn => {
+                        btn.style.boxShadow = 'none';
+                    });
+                    
+                    // Establecer nuevo color
+                    currentHighlightColor = getComputedStyle(this).backgroundColor;
+                    this.style.boxShadow = '0 0 0 2px ' + currentHighlightColor;
+                });
+            });
+            
+            clearHighlightsBtn.addEventListener('click', clearHighlights);
+            
+            // Inicializar la biblia
+            loadBooks();
+            
+            // Cargar reacciones y comentarios al iniciar
+            loadReactions();
+            loadComments();
+        });
+    </script>
+</body>
+</html>
